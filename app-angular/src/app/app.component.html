@@ -1,0 +1,28 @@
+<div id="chat-applicaton">
+    <h2>Chat Application - Angular client</h2>
+    <div id="chat-window">
+      <div id="output" *ngFor="let data of output">
+          <p><strong>{{data.handle}} : </strong>{{data.message}}</p>
+      </div>
+      <div id="feedback"><p>{{feedback}}</p></div>
+    </div>
+    <input id="handle" type="text" [(ngModel)]="userName" placeholder="Handle" />
+    <input id="message" type="text" [(ngModel)]="message" placeholder="Message" autocomplete="off"
+      (keypress)="messageTyping()" />
+    <button type="button" id="send" style="cursor: pointer;" (click)="sendMessage()">Send</button>
+
+
+  <input id="room" type="text" [(ngModel)]="room" placeholder="Room" />
+  <button type="button" id="connect"  (click)="connect()">Connect</button>
+  <button type="button" id="disconect"  (click)="disconect()">Disconect</button>
+  <button type="button" id="send2" (click)="sendMessage2()">SendMessage</button>
+
+  <h2>OUTRA SALA</h2>
+  <div id="chat-window2">
+    <div id="sala" *ngFor="let data of outrasala">
+      <p><strong>{{data.room}} : </strong>{{data.message}}</p>
+    </div>
+    <div id="msg"><p>{{feedback}}</p></div>
+  </div>
+
+</div>
